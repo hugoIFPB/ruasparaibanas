@@ -1,7 +1,7 @@
 const {DataTypes} = require("sequelize");
 const db = require("../db");
 
-const Cidade = db.define("Cidade",{
+const Entrevista = db.define("Entrevista",{
     id: {
         type:DataTypes.INTEGER,
         autoIncrement: true,
@@ -11,10 +11,10 @@ const Cidade = db.define("Cidade",{
         type: DataTypes.STRING,
         allowNull:false
     },
-    descricao: {
+    cidade: {
         type: DataTypes.STRING,
-        allowNull:false
+        allowNull: false
     }
 });
 
-module.exports =  Cidade;
+module.exports =Entrevista;

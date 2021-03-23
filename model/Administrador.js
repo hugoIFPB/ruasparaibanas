@@ -1,7 +1,7 @@
 const {DataTypes} = require("sequelize");
 const db = require("../db");
 
-const Cidade = db.define("Cidade",{
+const Administrador = db.define("Administrador",{
     id: {
         type:DataTypes.INTEGER,
         autoIncrement: true,
@@ -11,10 +11,14 @@ const Cidade = db.define("Cidade",{
         type: DataTypes.STRING,
         allowNull:false
     },
-    descricao: {
+    email: {
         type: DataTypes.STRING,
-        allowNull:false
+        allowNull: false
+    },
+    senha: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
 });
 
-module.exports =  Cidade;
+module.exports =Administrador;

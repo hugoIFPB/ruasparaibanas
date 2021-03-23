@@ -10,6 +10,10 @@ const Rua = db.define("Rua",{
     nome: {
         type: DataTypes.STRING,
         allowNull:false
+    },
+    tracobiografico: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 });
 
