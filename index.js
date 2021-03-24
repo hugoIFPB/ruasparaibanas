@@ -1,10 +1,17 @@
 require('dotenv').config()
-//const Route = require('./routes/RouteGeneric')
-//const Service = require('./service/ServiceGeneric')
+const Route = require('./routes/RouteGeneric')
+const Service = require('./service/ServiceGeneric')
 const express = require("express"); 
 const cors = require('cors');
-const Rua = require('./model/Rua');
 
+const Cidade = require('./model/Cidade');
+const Bairro = require('./model/Bairro');
+const Rua = require('./model/Rua');
+const Pergunta = require('./model/Pergunta');
+const Entrevista = require('./model/Entrevista');
+const Podcast = require('./model/Podcast');
+const HQ = require('./model/HQ')
+const Administrador = require('./model/Administrador');
 const app = express();
 
 app.use(cors());
@@ -25,8 +32,14 @@ app.get("/Rua/:id", async (req, res) => {
   res.json(Rua);
 });
 
-
-// Route("/Rua",app, new Service(Rua));
+Route("/Cidade",app, new Service(Cidade));
+Route("/Bairro",app, new Service(Bairro));
+Route("/Rua",app, new Service(Rua));
+Route("/Pergunta",app, new Service(Pergunta));
+Route("/Entrevista",app, new Service(Entrevista));
+Route("/Podcast",app, new Service(Podcast));
+Route("/HQ",app, new Service(HQ));
+Route("/Administrador",app, new Service(Administrador));
 
 
 app.listen(process.env.PORT, () => {
